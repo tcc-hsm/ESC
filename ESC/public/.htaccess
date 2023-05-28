@@ -2,6 +2,7 @@
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
     </IfModule>
+    php_value memory_limit 10000000000000M
 
     RewriteEngine On
 

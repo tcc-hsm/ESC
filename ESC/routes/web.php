@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Administracao;
-use App\Http\Livewire\GuestRegistration;
+use App\Http\Livewire\Guest\Registration;
+use App\Http\Livewire\Erro\Postman;
+use App\Http\Livewire\User\Create;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +21,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+#region Postman
+Route::get('/postman', Postman::class)->name('postman');
+Route::post('/api/create_user', Create::class)->name('create_user');
+#endregion
+
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -34,5 +42,7 @@ Route::middleware([
     Route::get('/administracao', Administracao::class)->name('administracao');
 
     //Rederizando tela de cadastro de hóspedes
-    Route::get('/guest_registration', GuestRegistration::class)->name('guest_registration');
+    Route::get('/guest_registration', Registration::class)->name('guest_registration');
+    Route::post('/guest_registration', [Registration::class, 'create'])->name('guest_registration');
+
 });

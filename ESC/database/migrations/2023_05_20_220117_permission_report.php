@@ -15,7 +15,7 @@ return new class extends Migration
     {
         //
         Schema::create('db_permission_report', function (Blueprint $table){
-            $table->string('id')->primary();
+            $table->id();
             $table->string('id_profile');
             $table->string('id_permission');
     
@@ -30,5 +30,6 @@ return new class extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('db_permission_report');
     }
 };

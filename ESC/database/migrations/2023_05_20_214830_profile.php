@@ -15,7 +15,7 @@ return new class extends Migration
     {
         //
         Schema::create('db_profile', function (Blueprint $table){
-            $table->string('id')->primary();
+            $table->id();
             $table->string('profile')->unique();
             $table->string('description')->nullable();
 
@@ -32,5 +32,7 @@ return new class extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('db_profile');
+
     }
 };
