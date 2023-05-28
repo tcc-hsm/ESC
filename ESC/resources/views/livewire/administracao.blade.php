@@ -17,7 +17,7 @@
     <div class="card h-100">
       <div class="card-body">
         <h4 class="card-title">Administration</h4>
-        <p class="card-text"><a href="">Create User</a></p>
+        <p class="card-text"><a href="{{ route('register') }}">Create User</a></p>
         <p class="card-text"><a href="">Edit User</a></p>
         <p class="card-text"><a href="">Create Profile</a></p>
         <p class="card-text"><a href="">Create Permission</a></p>

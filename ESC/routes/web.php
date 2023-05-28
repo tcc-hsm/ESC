@@ -26,6 +26,13 @@ Route::get('/postman', Postman::class)->name('postman');
 Route::post('/api/create_user', Create::class)->name('create_user');
 #endregion
 
+#region Administration
+Route::get('/register', function(){
+    return view('livewire.user.create');
+});
+
+Route::post('/register', Create::class)->name('register');
+#endregion
 
 Route::middleware([
     'auth:sanctum',
